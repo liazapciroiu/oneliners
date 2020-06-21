@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+  --green: #86f200;
+  --teal: #3efac5;
+  --blue: #34f0ff;
+  --yellow: #fdd300;
+  --grey: #BCBEC0;
+  --greyDark: #6D6E71;
+}
+
+@font-face {
+  font-family: "Display";
+  src: url("/app/assets/Chronicle\ Display\ Light.otf")format("opentype");
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/app/assets/bg.png');
+}
+
+nav {
+  height: 5rem;
+}
+
+footer {
+  width: 100vw;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+}
+
+footer img {
+  height: 5rem;
+  margin-left: 2rem;
+}
+
+nav li {
+  float: left;
+  padding: 2rem;
+  text-transform: uppercase;
+  list-style: none;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+}
+
+nav li a::after, h1.days::after {
+  content: '';
+  display: block;
+  position: relative;
+  width: 35px;
+  height: 5px;
+  background-color: #86f200;
+  top: -6px;
+  z-index: -100;
+}
+
+nav li a:hover::after {
+  width: 100%;
+  transition: all .5s;
+}
+
+main {
+  height: calc(100vh - 10rem - 10vh);
+}
+
+main section {
+  clear: both;
+  width: 50vw;
+  height: 50vw;
+  margin: 10vh auto 0 auto;
+}
+
+h1.days {
+  padding: 2rem;
+  font-family: 'Display';
+}

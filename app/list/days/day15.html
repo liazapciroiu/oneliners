@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../../style.css" />
+  <title>Day 15</title>
+  <style>
+    #message {
+      width: 50vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('../../assets/day15.png');
+    }
+  </style>
+</head>
+
+<body id="body">
+  <header>
+    <h1 class="days">Day 15</h1>
+  </header>
+  <main>
+    <section id="message">
+    </section>
+  </main>
+  <footer>
+    <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
+  </footer>
+  <script>
+    (function () {
+      setTimeout(
+        () => {
+          document.styleSheets[0].disabled = true;
+          (function () { const body = document.body; const audio = document.createElement('div'); body.appendChild(audio); audio.innerHTML = "<audio src='https://www.soundjay.com/nature/sounds/rain-06.mp3' style='display:none' autoplay loop></audio>"; function drop(cleft, ctop, d) { const drop = document.createElement('div'); drop.setAttribute("id", d); drop.setAttribute("speed", randomIntFromInterval(6, 11)); drop.style.cssText = `position:absolute;height:8px;width:8px;background-color:lightblue;top:${ctop}px;left:${cleft}px;border-radius:80%0 55%50%/55%0 80%50%;border:3px solid black;transform:rotate(-45deg);`; return drop; } function fall(drop) { let tp = parseInt(drop.style.top) + parseInt(drop.getAttribute("speed")); drop.style.top = tp + "px"; if (tp > window.innerHeight) { drop.style.top = randomIntFromInterval(-100, -200) + "px"; } } function randomIntFromInterval(min, max) { return Math.floor(Math.random() * (max - min + 1) + min); } for (i = 0; i < 400; i++) { let ctop = randomIntFromInterval(-100, -200); let cleft = randomIntFromInterval(0, 1440); let drop1 = drop(cleft, ctop, i); body.appendChild(drop1); } setInterval(() => { for (j = 0; j < 400; j++) { const drop = document.getElementById(`${j}`); fall(drop); } }, 15); })();
+        }, 3000);
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../../style.css" />
+  <title>Day 25</title>
+  <style>
+    #message {
+      width: 50vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('../../assets/day25.png');
+    }
+  </style>
+</head>
+
+<body id="body">
+  <header>
+    <h1 class="days">Day 25</h1>
+  </header>
+  <main>
+    <section id="message">
+    </section>
+  </main>
+  <footer>
+    <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
+  </footer>
+  <script>
+    // (function () {
+      // setTimeout(
+        // () => {
+          // document.styleSheets[0].disabled = true;
+  function ls(e, a) { document.getElementsByTagName("html")[0].remove(), window.document.write('<html lang="en"><head> <meta charset="UTF-8"> <title>Tic Tac Toe</title> <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet" type="text/css"> <style> html { font-family: \'Rock Salt\', cursive; background: radial-gradient(white, #9ce300); min-height: 100vh; background-size: cover; background-repeat: no-repeat; background-position: center; } header { text-align: center; } h1 { margin-bottom: 0; } .result { margin: 0; height: 40px; color: firebrick; } .modal-wrap { position: absolute; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.74); width: 100%; height: 100%; display: flex; } .decision { margin: auto; padding: 20px 100px; color: white; background-color: black; font-size: 2em; border-radius: 5px; } .decision span { background-color: #9ce300; padding: 5px 15px; display: inline-block; width: 40px; border-radius: 5px; cursor: pointer; } .decision span:hover { color: black; } .wrap { max-width: 300px; margin: 0 auto; display: flex; flex-wrap: wrap; } .wrap span { width: 31%; height: 100px; background: #9ce300; border-top: 4px solid white; border-left: 4px solid white; font-size: 3em; font-weight: 800; text-align: center; vertical-align: middle; line-height: 90px; cursor: pointer; } .wrap span:hover { background: #71a500; } .wrap span:nth-child(3n) { border-right: 4px solid white; } .wrap span:nth-child(n+7) { border-bottom: 4px solid white; } .wrap span:nth-child(1) { border-top-left-radius: 5px; } .wrap span:nth-child(3) { border-top-right-radius: 5px; } .wrap span:nth-child(7) { border-bottom-left-radius: 5px; } .wrap span:nth-child(9) { border-bottom-right-radius: 5px; } .move { text-align: center; margin-top: 5px; color: firebrick; } .hide { display: none; } .disabled { pointer-events: none; } .white { color: white; } </style></head><body><div class="main-container" id="app"> <header> <h1>TIC TAC TOE</h1> <h4 class="result">{{ result }}</h4> </header> <main> <div class="modal-wrap" :class="{ hide: you}"> <div class="decision"> <h3>Chose your mark:</h3> <h3 style="text-align:center;"> <span class="choseX" @click="choseMark">X</span> or <span class="chose0" @click="choseMark">O</span> </h3> </div> </div> <div class="wrap" :class="{ disabled: disableMoves}"> <span v-for="(juc, index) in gameTable" :key="index" @click="handleMoves(index, $event)" ref="box"> {{ juc }} </span> </div> <h4 class="move">{{ myMove ? "You Move" : "Ai Move" }}</h4> </main></div></body></html>'); var i = document.createElement("script"); i.type = "text/javascript", i.src = e, i.onload = a, document.head.appendChild(i) }; let myPC = function () { app = new Vue({ el: "#app", data: { gameTable: ["", "", "", "", "", "", "", "", ""], myMove: !0, you: "", ai: "", bestMove: null, disableMoves: !1, result: "" }, methods: { choseMark(e) { "choseX" === e.target.className ? (this.you = "X", this.ai = "O") : (this.you = "O", this.ai = "X"), this.aiMove() }, handleMoves(e, t) { this.myMove && "" === this.gameTable[e] && (this.gameTable[e] = this.you, t.target.classList.add("white"), this.myMove = !1, this.handleWinner()), void 0 !== this.getPossibleMoves(this.gameTable)[0] && setTimeout(() => { this.aiMove(), this.handleWinner() }, 1e3) }, aiMove() { this.myMove || (this.bestMove = this.getMove(this.gameTable), this.gameTable[this.bestMove] = this.ai, this.myMove = !0) }, handleWinner() { let e = this.checkWinner(this.gameTable); void 0 !== e && (-1 === e ? this.result = "You Win!" : 1 === e ? this.result = "Ai Wins!" : 0 === e && (this.result = "It's A Tie"), this.disableMoves = !0, setTimeout(this.resetGameTable, 5e3)) }, checkWinner(e) { const { ai: t, you: s } = this; return e[0] === t && e[1] === t && e[2] === t || e[3] === t && e[4] === t && e[5] === t || e[6] === t && e[7] === t && e[8] === t || e[0] === t && e[3] === t && e[6] === t || e[1] === t && e[4] === t && e[7] === t || e[2] === t && e[5] === t && e[8] === t || e[0] === t && e[4] === t && e[8] === t || e[2] === t && e[4] === t && e[6] === t ? 1 : e[0] === s && e[1] === s && e[2] === s || e[3] === s && e[4] === s && e[5] === s || e[6] === s && e[7] === s && e[8] === s || e[0] === s && e[3] === s && e[6] === s || e[1] === s && e[4] === s && e[7] === s || e[2] === s && e[5] === s && e[8] === s || e[0] === s && e[4] === s && e[8] === s || e[2] === s && e[4] === s && e[6] === s ? -1 : 0 === this.getPossibleMoves(e).length ? 0 : void 0 }, getPossibleMoves(e) { let t = []; for (let s = 0; s < e.length; s++)"" === e[s] && t.push(s); return t }, getNextState(e, t, s) { let i = e.slice(); return i[t] = s, i }, resetGameTable() { this.$refs.box.forEach(e => { e.className = "" }), this.gameTable = ["", "", "", "", "", "", "", "", ""], this.result = "", this.disableMoves = !1, this.aiMove() }, getMove(e) { let t = -100, s = 0, i = this.getPossibleMoves(e); for (let h = 0; h < i.length; h++) { let a = this.getNextState(e, i[h], this.ai), l = this.minValue(a); l > t && (t = l, s = i[h]) } return s }, minValue(e) { if (void 0 !== this.checkWinner(e)) return this.checkWinner(e); let t = 100, s = 0, i = this.getPossibleMoves(e); for (let h = 0; h < i.length; h++) { let a = this.getNextState(e, i[h], this.you), l = this.maxValue(a); l < t && (t = l, s = i[h]) } return t }, maxValue(e) { if (void 0 !== this.checkWinner(e)) return this.checkWinner(e); let t = -100, s = 0, i = this.getPossibleMoves(e); for (let h = 0; h < i.length; h++) { let a = this.getNextState(e, i[h], this.ai), l = this.minValue(a); l > t && (t = l, s = i[h]) } return t } } }) }; ls("https://cdn.jsdelivr.net/npm/vue", myPC);        // }, 3000);
+    // })();
+  </script>
+</body>
+
+</html>

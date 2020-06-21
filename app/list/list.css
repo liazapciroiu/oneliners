@@ -1,0 +1,20 @@
+main section {
+  width: 90vw;
+  height: calc(100vh - 10rem);
+  margin: 0 auto;
+  margin-bottom: 7rem;
+  padding: 0;
+  overflow: scroll;
+}
+
+main section a {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  border-bottom: 5px solid var(--green);
+  display: inline-block;
+  margin: 0.8rem;
+  width: 300px;
+}

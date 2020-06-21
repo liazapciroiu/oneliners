@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../../style.css" />
+  <title>Day 12</title>
+  <style>
+    #message {
+      width: 50vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('../../assets/day12.png');
+    }
+  </style>
+</head>
+
+<body id="body">
+  <header>
+    <h1 class="days">Day 12</h1>
+  </header>
+  <main>
+    <section id="message">
+    </section>
+  </main>
+  <footer>
+    <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
+  </footer>
+  <script>
+    (function () {
+      setTimeout(
+        () => {
+          document.styleSheets[0].disabled = true;
+          (function () { const body = document.body; body.innerHTML = ''; const canvas = document.createElement('canvas'); canvas.style.cssText = "display: block; margin: 0 auto;"; body.appendChild(canvas); body.style.cssText = "background-color: #000; position: fixed; margin:0; padding: 0; width: 100vw; height: 100vh; scroll:none;"; const message = document.createElement('div'); message.style.cssText = "width: 240px; background: #0b4d0be6; color: #21E921; border: 1px solid #1b8d1be6; text-align: center; padding: 7px 10px; font-size: 20px; font-family: monospace; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)"; message.innerHTML = "Deloitte Digital"; body.appendChild(message); const context = canvas.getContext('2d'); const width = canvas.width = 1900; const height = canvas.height = 1000; const cols = Math.floor(width / 20) + 1; const ypos = Array(cols).fill(0); context.fillStyle = '#87BD27'; context.fillRect(0, 0, width, height); const audio = document.createElement('div'); body.appendChild(audio); audio.innerHTML = "<audio src='https://www.looperman.com/media/loops/2647028/looperman-l-2647028-0129161-kanye-west-is-trying-to-glitch-the-matrix-2.mp3' style='display:none' autoplay loop></audio>"; function matrix() { context.fillStyle = '#0001'; context.fillRect(0, 0, width, height); context.fillStyle = '#0f0'; context.font = '16pt monospace'; ypos.forEach((y, ind) => { const text = String.fromCharCode(Math.random() * 128); const x = ind * 20; context.fillText(text, x, y); if (y > 100 + Math.random() * 10000) ypos[ind] = 0; else ypos[ind] = y + 20; }); } setInterval(matrix, 50); })();
+        }, 3000);
+    })();
+  </script>
+</body>
+
+</html>

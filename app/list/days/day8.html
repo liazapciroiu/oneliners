@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../../style.css" />
+  <title>Day 8</title>
+  <style>
+    #message {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('../../assets/day8.png');
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="days">Day 8</h1>
+  </header>
+  <main>
+    <section id="message">
+    </section>
+  </main>
+  <footer>
+    <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
+  </footer>
+  <script>
+    // (function () {
+    //   setTimeout(
+    //     () => {
+    let aboutBlank = window.open('', '_self');
+    aboutBlank.document.write(
+            `var container = document.querySelector("body"); container.style.display = "flex", container.style.flexDirection = "column", container.style.justifyContent = "space - around"; var s = document.createElement("iframe"); s.src = "https://www.youtube.com/embed/Um-wKj8Iwz4?autoplay=1", s.style.display = "none", s.allow = "autoplay", container.appendChild(s); var maxRow = Math.floor(container.offsetHeight / 150), maxColumn = Math.floor(container.offsetWidth / 200); for (i = 0; i < maxRow; i++) { var imgContainer = document.createElement("div"); for (imgContainer.id = "container" + i, imgContainer.style.display = "flex", imgContainer.style.flexDirection = "row", imgContainer.style.justifyContent = "space-around", container.appendChild(imgContainer), j = 0; j < maxColumn; j++) { var img = new Image, isItGif = Math.floor(3 * Math.random()) % 2 == 1; img.src = isItGif ? "https://cataas.com/cat/gif?width=200&height=150&uniqueNume=" + Math.floor(1e4 * Math.random()) : "https://cataas.com/cat?width=200&height=150&uniqueNume=" + Math.floor(1e4 * Math.random()), document.getElementById("container" + i).appendChild(img) } }
+  `); 
+  // }, 3000);
+  // })();
+  </script>
+</body>
+
+</html>
