@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../../style.css" />
+  <title>Day 7</title>
+  <style>
+    #message {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('../../assets/day7.png');
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="days">Day 7</h1>
+  </header>
+  <main>
+    <section id="message">
+    </section>
+  </main>
+  <footer>
+    <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
+  </footer>
+  <script>
+    var container = document.querySelector("body"); document.body.style.width = "100%"; document.body.style.height = "100%"; document.body.style.position = "absolute"; var emoji = ['🌽', '🍇', '🍌', '🍒', '🍕', '🍷', '🍭', '💖', '💩', '🐷', '🐸', '🐳', '🎃', '🎾', '🌈', '🍦', '💁', '🔥', '😁', '😱', '🌴', '👏', '💃']; var circles = []; var resizeTimer; function generateEmojis() { for (var i = 0; i < 15; i++) { for (var j = 0; j <= Math.ceil(document.body.offsetWidth / 100) * 100; j += 210) { addCircle(i * 150, [10 + j, 300], emoji[Math.floor(Math.random() * emoji.length)]); addCircle(i * 150, [10 + j, -300], emoji[Math.floor(Math.random() * emoji.length)]); } } } window.onresize = function () { clearTimeout(resizeTimer); if (document.querySelector('.emoji')) { document.querySelectorAll('.emoji').forEach(e => e.remove()); } resizeTimer = setTimeout(function () { generateEmojis(); }, 1250); }; generateEmojis(); function addCircle(delay, range, color) { setTimeout(function () { var c = new Circle(range[0] + Math.random() * range[1], 200 + Math.random() * 4, color, { x: -0.15 + Math.random() * 0.3, y: 1 + Math.random() * 1 }, range); circles.push(c); }, delay); } function Circle(x, y, c, v, range) { var _this = this; this.x = x; this.y = y; this.color = c; this.v = v; this.range = range; this.element = document.createElement('span'); this.element.classList.add("emoji"); this.element.style.opacity = 0; this.element.style.position = 'absolute'; this.element.style.zIndex = 999; this.element.style.top = "-100px"; this.element.style.left = "10px"; this.element.style.fontSize = '26px'; this.element.style.color = 'hsl(' + (Math.random() * 360 | 0) + ',80%,50%)'; this.element.innerHTML = c; container.appendChild(this.element); this.update = function () { if (_this.y > document.body.offsetHeight) { _this.y = 80 + Math.random() * 4; _this.x = _this.range[0] + Math.random() * _this.range[1]; } _this.y += _this.v.y; _this.x += _this.v.x; this.element.style.opacity = 1; this.element.style.transform = 'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)'; this.element.style.webkitTransform = 'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)'; this.element.style.mozTransform = 'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)'; }; } function animate() { for (var i in circles) { circles[i].update(); } requestAnimationFrame(animate); } animate();
+  </script>
+</body>
+
+</html>

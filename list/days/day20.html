@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../../style.css" />
+  <title>Day 20</title>
+  <style>
+    #message {
+      width: 50vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('../../assets/day20.png');
+    }
+  </style>
+</head>
+
+<body id="body">
+  <header>
+    <h1 class="days">Day 20</h1>
+  </header>
+  <main>
+    <section id="message">
+    </section>
+  </main>
+  <footer>
+    <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
+  </footer>
+  <script>
+    (function () {
+      setTimeout(
+        () => {
+          document.body.style.margin = "0", document.body.style.padding = "0", document.body.style.position = "relative", document.body.style.display = "grid", document.body.style.placeItems = "center", document.body.style.background = "#000", document.body.style.height = "100vh"; const placeholderImageUrl = "https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1501089528/blyybcrxcn1of2xvigha.jpg", cardsArray = [{ id: 1, name: "React", imgUrl: "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/001/067/square_256/reactstorybooklogo.png" }, { id: 2, name: "Angular", imgUrl: "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/962/square_256/angularcli.png" }, { id: 3, name: "Vue", imgUrl: "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/001/036/square_256/vue.png" }, { id: 4, name: "Svelte", imgUrl: "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/001/236/square_256/svelte-logo-vertical.png" }, { id: 5, name: "Javascript", imgUrl: "https://gitconnected.com/public/images/tutorials/svg/javascript.svg" }, { id: 6, name: "HTML", imgUrl: "https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" }, { id: 7, name: "CSS", imgUrl: "https://www.it-labs.ro/frontend/img/about/css3.png" }], newArray = shuffle([...cardsArray, ...cardsArray]); document.body.innerHTML = `<div style="width:600px;height:700px;background:#fff;border-radius:15px;padding:15px;position:relative;z-index:2"><h1 style="text-align:center">Deloitte match-two game</h1><div id="cardsContainer"style="display:grid;grid-template-rows:repeat(4,1fr);grid-template-columns:repeat(4,1fr);place-items:center;grid-row-gap:55px;"></div></div><div id="party" style="position:absolute;top:0;bottom:0;left:0;right:0;z-index:1;background-image:url(https://media2.giphy.com/media/IjmMzurYulKEw/giphy.gif?cid=ecf05e47e253577dfb30fe5f0d8bf302ab012d155695d2fb&rid=giphy.gif);background-size:contain; display:none;"></div><audio id="partySound"><source src="https://www.wavsource.com/snds_2020-03-30_7102365145747638/sfx/fanfare3.wav" type="audio/wav"></audio>`; const cardsContainer = document.getElementById("cardsContainer"), partySound = document.getElementById("partySound"), party = document.getElementById("party"); let initiatedElement, solvedItemsCounter = 0; newArray.forEach(b => { cardsContainer.innerHTML += `<div data-id="${b.id}"class="card"style="width:100px;height:100px;position:relative;transition:all 0.2s ease-out;transform-style:preserve-3d;cursor:pointer;user-select:none;"><img src="${placeholderImageUrl}"style="max-width:100%;position:absolute;backface-visibility:hidden;pointer-events:none;border-radius:10px;"><img src="${b.imgUrl}"style="max-width:100%;position:absolute;backface-visibility:hidden;background:#fff;transform:rotateY(180deg);pointer-events:none;border-radius:10px;"></div>` }), cardsContainer.addEventListener("click", c => { const a = c.target; a.classList.contains("card") && (a.style.pointerEvents = "none", cardsContainer.classList.contains("initiated") ? (a.style.transform = "rotateY(180deg)", a.dataset.id === initiatedElement.dataset.id ? solvedItemsCounter++ : setTimeout(() => { a.style.transform = "rotateY(0)", a.style.pointerEvents = "all", initiatedElement.style.transform = "rotateY(0)", initiatedElement.style.pointerEvents = "all" }, 200)) : (initiatedElement = a, a.style.transform = "rotateY(180deg)"), cardsContainer.classList.toggle("initiated")), solvedItemsCounter === cardsArray.length && (partySound.play(), setTimeout(() => { party.style.display = "block" }, 200)) }); function shuffle(e) { for (var a, f, g = e.length; 0 !== g;)f = Math.floor(Math.random() * g), g -= 1, a = e[g], e[g] = e[f], e[f] = a; return e }
+        }, 3000);
+    })();
+  </script>
+</body>
+
+</html>

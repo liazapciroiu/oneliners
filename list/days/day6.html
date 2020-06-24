@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../../style.css" />
+  <title>Day 6</title>
+  <style>
+    #message {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('../../assets/day6.png');
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="days">Day 6</h1>
+  </header>
+  <main>
+    <section id="message">
+    </section>
+  </main>
+  <footer>
+    <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
+  </footer>
+  <script>
+    (function () {
+      setTimeout(
+        () => {
+          (function devJokesInator() { document.getElementsByTagName("head")[0].innerHTML = "<link href=\"https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap\" rel=\"stylesheet\">"; document.getElementsByTagName("body")[0].style = "background: url(\"https://wallpaperaccess.com/full/1687819.jpg\") no-repeat fixed center"; document.getElementsByTagName("body")[0].innerHTML = '<div style="font-size:20px; font-family: \'Balsamiq Sans\', cursive; color: #fff; padding-top: 20px; top:0; left:0; position: absolute; height:100%; width:100%; text-align: center"><br><h2>I present to you my greatest invention ever! The DevJokes-inator!</h2><br><img src="https://i.ytimg.com/vi/fyHWGK3h1SQ/maxresdefault.jpg" width="700px" height="400px" /><br><h4>I will disgrace and humiliate developers by dropping one random comedic punchline and you will never stop me, Perry the Platypus!</h4><input style="border:2px solid; background: cyan; padding: 10px;font-size:20px; font-family: \'Balsamiq Sans\', cursive;" type="submit" id="submit" value="Give it to me!"></div>'; document.getElementById("submit").onclick = function () { const devJokes = ["How do you comfort a JavaScript bug? You console it.", "When a JavaScript date has gone bad, 'Don't call me, I'll callback you. I promise!'", "Why was the JavaScript developer sad? Because he didn't Node how to Express himself.", "Why did the developer go broke? Because he used up all his cache.", "Why did the CoffeeScript developer keep getting lost? Because he couldn't find his source without a map.", "How did the doctor revive the developer? The dev wasn't responsive so the doc picked him up by his bootstraps.", "How did the web developer hurt Comic Sans feelings? Once he saw the font he quickly changed it to Open Sans and exclaimed 'In your @font-face!'", "Why did the child component have such great self-esteem? Because its parent kept giving it props!", "Why did the functional component feel lost? Because it didn't know what state it was in!", "Why did the react class component feel relieved? Because it was now off the hook!", "Why did the React developer have an addiction? Because they were completely hooked on the hooks proposal.", "Why couldn't the React component understand the joke? Because it didn't get the context.", "When she said 'you should trim', you thought she was talking about the code.", "Your latest PR received so many comments that I may call you an influencer."]; const randomLine = Math.floor(Math.random() * Math.floor(devJokes.length)); alert(devJokes[randomLine]); }; })();
+        }, 3000);
+    })();
+  </script>
+</body>
+
+</html>

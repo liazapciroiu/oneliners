@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../../style.css" />
+  <title>Day 13</title>
+  <style>
+    #message {
+      width: 50vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url('../../assets/day13.png');
+    }
+  </style>
+</head>
+
+<body id="body">
+  <header>
+    <h1 class="days">Day 13</h1>
+  </header>
+  <main>
+    <section id="message">
+    </section>
+  </main>
+  <footer>
+    <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
+  </footer>
+  <script>
+    (function () {
+      setTimeout(
+        () => {
+          (function () { const body = document.body; body.innerHTML = `<div style="display: flex;justify-content: center;flex-direction: column;align-items: center;height: 100vh;">            <div class="joke"></div>            <button class="next-btn" type="button" style="background: dodgerblue;font-size: 16px;margin-top: 16px;padding: 5px;width: 100px;border-radius: 10px;">Next</button>        </div>    `; var name = prompt("Please enter your name:", "Harry Potter"); var jokes = [`${name} can kill two stones with one bird.`, `${name} ordered a Big Mac at Burger King and got one.`, `${name} can slam a revolving door.`, `${name} once visited the Virgin Islands. They are now The Islands.`, `${name} doesn't read books. Stares them down until he gets the information he wants.`, `${name} doesn't wear a watch. Simply decides what time it is.`, `When the Boogeyman goes to sleep every night, he checks his closet for ${name}`, `${name} does not own a stove, oven, or microwave , because revenge is a dish best served cold.`, `${name} makes onions cry.`,]; var index = 0; var txt; if (name == null || name == "") { txt = "Don't $%%%^*^% cancel the prompt!!!"; } else { txt = jokes[0]; } document.querySelector(".joke").innerHTML = txt; document.querySelector(".next-btn").addEventListener("click", () => { let text; if (index === 8) { text = "Thank you!"; } else { index++; text = jokes[index]; } document.querySelector(".joke").innerHTML = text; }); })();
+        }, 3000);
+    })();
+  </script>
+</body>
+
+</html>
