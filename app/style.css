@@ -16,13 +16,13 @@
 
 @font-face {
   font-family: "Display";
-  src: url("/app/assets/Chronicle\ Display\ Light.otf")format("opentype");
+  src: url('./assets/Chronicle\ Display\ Light.otf')format("opentype");
 }
 
 body {
   width: 100vw;
   height: 100vh;
-  background-image: url('/app/assets/bg.png');
+  background-image: url('./assets/bg.png');
 }
 
 nav {
@@ -54,7 +54,8 @@ nav li a {
   font-weight: 700;
 }
 
-nav li a::after, h1.days::after {
+nav li a::after,
+h1.days::after {
   content: '';
   display: block;
   position: relative;
@@ -76,8 +77,8 @@ main {
 
 main section {
   clear: both;
-  width: 50vw;
-  height: 50vw;
+  width: 600px;
+  height: 600px;
   margin: 10vh auto 0 auto;
 }
 
