@@ -1,0 +1,23 @@
+{
+  "name": "oneliners",
+  "version": "1.0.0",
+  "description": "",
+  "main": "theOneliners.js",
+  "scripts": {
+    "deploy": "gh-pages -d app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liazapciroiu/oneliners.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liazapciroiu/oneliners/issues"
+  },
+  "homepage": "https://liazapciroiu.github.io/oneliners",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
