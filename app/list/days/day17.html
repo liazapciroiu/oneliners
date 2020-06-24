@@ -29,13 +29,12 @@
     <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
   </footer>
   <script>
-    (function () {
-      setTimeout(
-        () => {
-          document.styleSheets[0].disabled = true;
-          !function () { const e = document.body; e.innerHTML = ""; const t = document.createElement("div"); t.setAttribute("style", "color: #fff; font-size: 20vw; text-transform: uppercase; font-weight: 100;"); const n = document.createElement("div"); n.setAttribute("style", "display: flex; mix-blend-mode: difference; font-size: 20vw; text-transform: uppercase; font-weight: 500;"); const o = document.createElement("div"), r = document.createElement("div"), s = document.createElement("div"); n.appendChild(o), n.appendChild(r), n.appendChild(s), e.appendChild(t), e.appendChild(n), setInterval(function () { const n = new Date, i = c(n); e.setAttribute("style", `background-color: #${i}; display: flex; align-items: center; justify-content: center; flex-flow: column;`), t.innerHTML = `#${i}`, o.innerHTML = `${n.getHours() < 10 ? "0" + n.getHours() : n.getHours()}:`, r.innerHTML = `${n.getMinutes() < 10 ? "0" + n.getMinutes() : n.getMinutes()}:`, s.innerHTML = n.getSeconds() < 10 ? "0" + n.getSeconds() : n.getSeconds() }, 1e3); const c = function (e) { const t = e.getMilliseconds(), n = e.getSeconds(), o = e.getMinutes(), r = e.getHours(); let s, c, d, u, l, a; const f = (r + o / 60) / 24; s = i(Math.round(15 * f)); const M = r >= 20 ? (r + o / 60) / 4 : (r + o / 60) / 10, g = Math.floor(M); c = i(Math.round(15 * (M - g))); const m = (o + n / 60) / 60; d = i(Math.round(15 * m)); const h = (o + n / 60) / 10, p = Math.floor(h); u = i(Math.round(15 * (h - p))); const H = (n + t / 1e3) / 60; l = i(Math.round(15 * H)); const v = (n + t / 1e3) / 10, y = Math.floor(v); return [s, c, d, u, l, a = i(Math.round(15 * (v - y)))].join("") }; function i(e) { return e < 10 ? e : e.toString(16) } }();
-        }, 3000);
-    })();
+       (function () {
+          setTimeout(
+            () => {
+              let aboutBlank = window.open('day17blank.html', '_self');
+            }, 3000);
+        })();
   </script>
 </body>
 
