@@ -9,9 +9,6 @@
   <title>Day 19</title>
   <style>
     #message {
-      width: 50vw;
-      background-size: contain;
-      background-repeat: no-repeat;
       background-image: url('../../assets/day19.png');
     }
   </style>
@@ -23,18 +20,16 @@
   </header>
   <main>
     <section id="message">
+      <button onclick="play()">> Play</button>
     </section>
   </main>
   <footer>
     <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
   </footer>
   <script>
-    (function () {
-      setTimeout(
-        () => {
-          let r1 = 5; let a1 = .23; let b1 = .1; let c1 = .19; let d2 = .31; let e2 = 2.1; let f2 = .19; let g3 = 250; let h3 = 230; let p3 = 290; let j3 = 220; let tgt = document.getElementsByTagName("body"); function releaseTheVirus() { let walker = document.createTreeWalker(document.documentElement, NodeFilter.SHOW_TEXT, null, false); while (walker.nextNode()) (walker.currentNode.nodeValue = 'Deloitte Digital Romania'); document.documentElement.style.transitionDuration = '8s'; document.documentElement.style.transformOrigin = 'center, top'; document.documentElement.style.transitionTimingFunction = 'ease-in'; document.documentElement.style.transform = 'scale(0.1)'; let tgtS = tgt[0].style; tgtS.position = 'absolute'; tgtS.left = Math.sin(r1 * a1 + c1 + e2) * g3 + p3 + "px"; tgtS.top = Math.cos(r1 * b1 + d2 + f2) * h3 + j3 + "px"; r1++; }; setInterval(() => { releaseTheVirus() }, 50);
-        }, 3000);
-    })();
+    function play() {
+      let r1 = 5; let a1 = .23; let b1 = .1; let c1 = .19; let d2 = .31; let e2 = 2.1; let f2 = .19; let g3 = 250; let h3 = 230; let p3 = 290; let j3 = 220; let tgt = document.getElementsByTagName("body"); function releaseTheVirus() { let walker = document.createTreeWalker(document.documentElement, NodeFilter.SHOW_TEXT, null, false); while (walker.nextNode()) (walker.currentNode.nodeValue = 'Deloitte Digital Romania'); document.documentElement.style.transitionDuration = '8s'; document.documentElement.style.transformOrigin = 'center, top'; document.documentElement.style.transitionTimingFunction = 'ease-in'; document.documentElement.style.transform = 'scale(0.1)'; let tgtS = tgt[0].style; tgtS.position = 'absolute'; tgtS.left = Math.sin(r1 * a1 + c1 + e2) * g3 + p3 + "px"; tgtS.top = Math.cos(r1 * b1 + d2 + f2) * h3 + j3 + "px"; r1++; }; setInterval(() => { releaseTheVirus() }, 50);
+    }
   </script>
 </body>
 

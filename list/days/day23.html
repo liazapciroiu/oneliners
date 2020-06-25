@@ -9,9 +9,6 @@
   <title>Day 23</title>
   <style>
     #message {
-      width: 50vw;
-      background-size: contain;
-      background-repeat: no-repeat;
       background-image: url('../../assets/day23.png');
     }
   </style>
@@ -23,19 +20,16 @@
   </header>
   <main>
     <section id="message">
+      <button onclick="play()">> Play</button>
     </section>
   </main>
   <footer>
     <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
   </footer>
   <script>
-    (function () {
-      setTimeout(
-        () => {
-          document.styleSheets[0].disabled = true;
-          var body = document.getElementsByTagName("body")[0], container = document.createElement("div"); container.style.position = "fixed", container.style.zIndex = "999999999999", container.style.backgroundColor = "black", container.style.width = "100%", container.style.height = "100%", container.id = "convertorContainer", body.prepend(container); var node = document.createElement("input"); node.type = "file", node.accept = "image/*", node.id = "file-input"; container.appendChild(node); var canvasElement = document.createElement("canvas"); canvasElement.id = "preview", canvasElement.style = "display: none;"; var preNode = document.createElement("pre"); preNode.id = "ascii", preNode.style.fontSize = "8px", preNode.style.color = "#00FF41", container.appendChild(preNode); var canvas = canvasElement, fileInput = node, asciiImage = document.getElementById("ascii"), context = canvas.getContext("2d"), toGrayScale = (e, t, a) => .21 * e + .72 * t + .07 * a, getFontRatio = () => { var e = document.createElement("pre"); e.style.display = "inline", e.textContent = " ", document.body.appendChild(e); var { width: t, height: a } = e.getBoundingClientRect(); return document.body.removeChild(e), a / t }, fontRatio = getFontRatio(), convertToGrayScales = (e, t, a) => { var n = e.getImageData(0, 0, t, a), r = []; for (let e = 0; e < n.data.length; e += 4) { var o = n.data[e], i = n.data[e + 1], d = n.data[e + 2], c = toGrayScale(o, i, d); n.data[e] = n.data[e + 1] = n.data[e + 2] = c, r.push(c) } return e.putImageData(n, 0, 0), r }, MAXIMUM_WIDTH = 80, MAXIMUM_HEIGHT = 80, clampDimensions = (e, t) => { const a = Math.floor(getFontRatio() * e); if (t > MAXIMUM_HEIGHT) { return [Math.floor(a * MAXIMUM_HEIGHT / t), MAXIMUM_HEIGHT] } if (e > MAXIMUM_WIDTH) { const e = Math.floor(t * MAXIMUM_WIDTH / a); return [MAXIMUM_WIDTH, e] } return [a, t] }; fileInput.onchange = (e => { var t = e.target.files[0], a = new FileReader; a.onload = (e => { var t = new Image; t.onload = (() => { var [e, a] = clampDimensions(t.width, t.height); canvas.width = e, canvas.height = a, context.drawImage(t, 0, 0, e, a); var n = convertToGrayScales(context, e, a); fileInput.style.display = "none", drawAscii(n, e) }), t.src = e.target.result }), a.readAsDataURL(t) }); var grayRamp = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/|()1{}[]?-_+~<>i!lI;:,\"^`'. ", rampLength = grayRamp.length, getCharacterForGrayScale = e => grayRamp[Math.ceil((rampLength - 1) * e / 255)], drawAscii = (e, t) => { var a = e.reduce((e, a, n) => { var r = getCharacterForGrayScale(a); return (n + 1) % t == 0 && (r += "\n"), e + r }, ""); asciiImage.textContent = a };
-        }, 3000);
-    })();
+    function play() {
+      window.open('day23blank.html', '_self');
+    }
   </script>
 </body>
 

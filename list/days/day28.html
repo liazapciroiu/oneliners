@@ -9,9 +9,6 @@
   <title>Day 28</title>
   <style>
     #message {
-      width: 50vw;
-      background-size: contain;
-      background-repeat: no-repeat;
       background-image: url('../../assets/day28.png');
     }
   </style>
@@ -23,18 +20,16 @@
   </header>
   <main>
     <section id="message">
+      <button onclick="play()">> Play</button>
     </section>
   </main>
   <footer>
     <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
   </footer>
   <script>
-    (function () {
-      setTimeout(
-        () => {
-          document.styleSheets[0].disabled = true;
-        }, 3000);
-    })();
+    function play() {
+      !function () { const t = document.createElement("canvas"); t.setAttribute("id", "c"), t.style.position = "absolute", t.style.top = "0", t.style.left = "0", t.style["background-color"] = "black", document.body.appendChild(t); var i = t.width = window.innerWidth, h = t.height = window.innerHeight, e = t.getContext("2d"), n = 10, s = 30, o = 10, l = 100, d = 4, r = 5, a = [], w = 0, y = 0, v = [[0, 1], [1, 0], [0, -1], [-1, 0], [.7, .7], [.7, -.7], [-.7, .7], [-.7, -.7]], u = { x: i / 2, y: h / 2, vx: 0, vy: 0, width: o }; function c() { a.length = 0; for (var t = 0; t < d; ++t)a.push(new f(u)); e.fillStyle = "#222", e.fillRect(0, 0, i, h) } function x(t) { return "hsl( hue, 80%, 50% )".replace("hue", t / i * 360 + w) } function f(t) { this.x = 0 | t.x, this.y = 0 | t.y, this.width = t.width / 1.25; do { var i = v[Math.random() * v.length | 0]; this.vx = i[0], this.vy = i[1] } while (this.vx === -t.vx && this.vy === -t.vy || this.vx === t.vx && this.vy === t.vy); this.vx *= r, this.vy *= r, this.dist = Math.random() * (s - n) + n } f.prototype.step = function () { var t = !1, o = this.x, d = this.y; if (this.x += this.vx, this.y += this.vy, --this.dist, (this.x < 0 || this.x > i || this.y < 0 || this.y > h) && (t = !0), this.dist <= 0 && this.width > 1 && (this.dist = Math.random() * (s - n) + n, a.length < l && a.push(new f(this)), a.length < l && Math.random() < .5 && a.push(new f(this)), Math.random() < .2 && (t = !0)), e.strokeStyle = e.shadowColor = x(this.x), e.beginPath(), e.lineWidth = this.width, e.moveTo(this.x, this.y), e.lineTo(o, d), e.stroke(), t) return !0 }, c(), function t() { window.requestAnimationFrame(t), ++w, e.shadowBlur = 0, e.fillStyle = "rgba(0,0,0,.02)", e.fillRect(0, 0, i, h), e.shadowBlur = .5; for (var n = 0; n < a.length; ++n)a[n].step() && (a.splice(n, 1), --n); ++y, a.length < l && y > 10 && Math.random() < .5 && (y = 0, a.push(new f(u)), e.fillStyle = e.shadowColor = x(u.x), e.beginPath(), e.arc(u.x, u.y, o, 0, 2 * Math.PI), e.fill()) }(), window.addEventListener("resize", function () { i = t.width = window.innerWidth, h = t.height = window.innerHeight, u.x = i / 2, u.y = h / 2, c() }) }();
+    }
   </script>
 </body>
 

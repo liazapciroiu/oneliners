@@ -31,8 +31,13 @@
   </header>
   <main>
     <section id="message">
+      <button onclick="play()">> Play</button>
     </section>
     <section id="console">
+      <video src="../../assets/day30video.mov" width="600px" height="500px" controls id="video">Your browser does not
+        support
+        the video tag.
+      </video>
     </section>
   </main>
   <footer>
@@ -41,12 +46,13 @@
   <script>
     let messageD = document.getElementById('message').style;
     let consoleD = document.getElementById('console').style;
-    (function () {
-      setTimeout(() => {
-        messageD.display = 'none';
-        consoleD.display = 'block';
-      }, 3000)
-    })();
+    let videoD = document.getElementById('video');
+    function play() {
+      messageD.display = 'none';
+      consoleD.display = 'block';
+      videoD.autoplay = true;
+      videoD.load();
+    }
   </script>
 </body>
 

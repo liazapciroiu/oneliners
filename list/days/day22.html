@@ -8,19 +8,8 @@
   <link rel="stylesheet" href="../../style.css" />
   <title>Day 22</title>
   <style>
-    #message,
-    #console {
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-
     #message {
       background-image: url('../../assets/day22.png');
-    }
-
-    #console {
-      background-image: url('../../assets/day22console.png');
-      display: none;
     }
   </style>
 </head>
@@ -31,8 +20,12 @@
   </header>
   <main>
     <section id="message">
+      <button onclick="play()">> Play</button>
     </section>
     <section id="console">
+      <video src="../../assets/day22video.mov" width="600px" height="500px" controls id="video">Your browser does not support
+        the video tag.
+      </video>
     </section>
   </main>
   <footer>
@@ -41,12 +34,13 @@
   <script>
     let messageD = document.getElementById('message').style;
     let consoleD = document.getElementById('console').style;
-    (function () {
-      setTimeout(() => {
-        messageD.display = 'none';
-        consoleD.display = 'block';
-      }, 2500)
-    })();
+    let videoD = document.getElementById('video');
+    function play() {
+      messageD.display = 'none';
+      consoleD.display = 'block';
+      videoD.autoplay = true;
+      videoD.load();
+    }
   </script>
 </body>
 

@@ -9,9 +9,6 @@
   <title>Day 17</title>
   <style>
     #message {
-      width: 50vw;
-      background-size: contain;
-      background-repeat: no-repeat;
       background-image: url('../../assets/day17.png');
     }
   </style>
@@ -23,18 +20,16 @@
   </header>
   <main>
     <section id="message">
+      <button onclick="play()">> Play</button>
     </section>
   </main>
   <footer>
     <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
   </footer>
   <script>
-       (function () {
-          setTimeout(
-            () => {
-              let aboutBlank = window.open('day17blank.html', '_self');
-            }, 3000);
-        })();
+    function play() {
+      window.open('day17blank.html', '_self');
+    }
   </script>
 </body>
 
