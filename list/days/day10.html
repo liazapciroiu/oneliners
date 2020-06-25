@@ -11,6 +11,12 @@
     #message {
       background-image: url('../../assets/day10.png');
     }
+    span {
+      text-transform: lowercase;
+    }
+    button {
+      top: 120px;
+    }
   </style>
 </head>
 
@@ -20,11 +26,11 @@
   </header>
   <main>
     <section id="message">
-      <button onclick="play()">> Play</button>
+      <button onclick="play()">> Play <br /> <span>*make sure you move your mouse ;)</span></button>
     </section>
   </main>
   <footer>
-    <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
+    <img src="../../assets/feFull.jpg" alt="logo fe guild" />
   </footer>
   <script>
     function play() {
