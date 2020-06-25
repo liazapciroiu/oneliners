@@ -7,29 +7,6 @@
 </body>
 <script>
   var container = document.querySelector("body"); container.style.display = "flex", container.style.flexDirection = "column", container.style.justifyContent = "space-around"; var s = document.createElement("iframe"); s.src = "https://www.youtube.com/embed/Um-wKj8Iwz4?autoplay=1", s.style.display = "none", s.allow = "autoplay", container.appendChild(s); var maxRow = Math.floor(container.offsetHeight / 150), maxColumn = Math.floor(container.offsetWidth / 200); for (i = 0; i < maxRow; i++) { var imgContainer = document.createElement("div"); for (imgContainer.id = "container" + i, imgContainer.style.display = "flex", imgContainer.style.flexDirection = "row", imgContainer.style.justifyContent = "space-around", container.appendChild(imgContainer), j = 0; j < maxColumn; j++) { var img = new Image, isItGif = Math.floor(3 * Math.random()) % 2 == 1; img.src = isItGif ? "https://cataas.com/cat/gif?width=200&height=150&uniqueNume=" + Math.floor(1e4 * Math.random()) : "https://cataas.com/cat?width=200&height=150&uniqueNume=" + Math.floor(1e4 * Math.random()), document.getElementById("container" + i).appendChild(img) } }
-  
-  s.setAttribute('id', 'existing-iframe');
-  var tag = document.createElement('script');
-  tag.id = 'iframe-demo';
-  tag.src = 'https://www.youtube.com/iframe_api';
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  var player;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('existing-iframe', {
-      events: {
-        'onReady': onPlayerReady
-      }
-    });
-  }
-  function onPlayerReady(event) {
-    // var existing = document.getElementById('existing-iframe');
-    // existing.setVolume(100);
-    // existing.playVideo();
-    event.target.setVolume(100);
-    event.target.playVideo();
-  }
 </script>
 
 </html>
