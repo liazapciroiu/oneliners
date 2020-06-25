@@ -9,9 +9,6 @@
   <title>Day 11</title>
   <style>
     #message {
-      width: 50vw;
-      background-size: contain;
-      background-repeat: no-repeat;
       background-image: url('../../assets/day11.png');
     }
   </style>
@@ -23,19 +20,17 @@
   </header>
   <main>
     <section id="message">
+      <button onclick="play()">> Play</button>
     </section>
   </main>
   <footer>
     <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
   </footer>
   <script>
-    (function () {
-      setTimeout(
-        () => {
-          document.styleSheets[0].disabled = true;
-          (function f() { const body = document.body; body.innerHTML = ''; body.setAttribute("style", "background-color: #000; display: flex; justify-content: center; align-items: center;"); const container = document.createElement('div'); body.appendChild(container); container.setAttribute("style", "width:400px;height:400px; display: flex; justify-content: center; align-items: center; flex-direction: column; color: #fff"); container.innerHTML = "<h1>Expectations for YE Review</h1> <audio src='http://soundbible.com/mp3/Motorbike-SoundBible.com-784603027.mp3' style='display:none' autoplay></audio>"; const exp = ['TPM compliance', 'Achievements', 'Strenghts', 'Visibility', 'Feedback']; const expEl = document.createElement('div'); container.appendChild(expEl); expEl.setAttribute("style", "width:200px;height:200px; background-image: url('https://www.pikpng.com/pngl/b/95-952330_scal-svg-speech-bubble-transparent-thought-bubble-clipart.png');background-size: 200px; background-repeat: no-repeat;color: #000; font-size: 20px;"); let i = 0; const setT = (audio, img, rest, delay) => { setTimeout(() => container.innerHTML = '<audio src="' + audio + '" style="display:none" autoplay></audio>' + (img ? ("<img src='" + img + "'/>") : '') + rest, delay); }; (function loop() { expEl.innerHTML = '<div style="margin: 60px 0 0 auto; text-align: center">' + exp[i] + '</div>'; const mel = 'https://pagalworld.to/files/download/id/712#t=00:00:'; if (++i < exp.length) { setTimeout(loop, 1500); } else { setT(mel + '01', 'https://media.giphy.com/media/UtmhPY5NB7sfiTyP8L/giphy.gif', '', 1000); setT('http://soundbible.com/mp3/Out%20Of%20Control-SoundBible.com-1631366814.mp3', '', "<h1>2 hours before deadline</h1><div style='color:red'><h3>204 No Content - Surname_Name_YE Review.pdf</h3> <h3>404 Not Found - Feedback<h3/>", 6000); setT(mel + '30', 'https://media1.tenor.com/images/8787f8541b03e6540da9f1f3bfb78bf4/tenor.gif?itemid=17079161', '', 11000); } })(); window.onclick = f; })();
-        }, 3000);
-    })();
+    function play() {
+      document.styleSheets[0].disabled = true;
+      (function f() { const body = document.body; body.innerHTML = ''; body.setAttribute("style", "background-color: #000; display: flex; justify-content: center; align-items: center;"); const container = document.createElement('div'); body.appendChild(container); container.setAttribute("style", "width:400px;height:400px; display: flex; justify-content: center; align-items: center; flex-direction: column; color: #fff"); container.innerHTML = "<h1>Expectations for YE Review</h1> <audio src='http://soundbible.com/mp3/Motorbike-SoundBible.com-784603027.mp3' style='display:none' autoplay></audio>"; const exp = ['TPM compliance', 'Achievements', 'Strenghts', 'Visibility', 'Feedback']; const expEl = document.createElement('div'); container.appendChild(expEl); expEl.setAttribute("style", "width:200px;height:200px; background-image: url('https://www.pikpng.com/pngl/b/95-952330_scal-svg-speech-bubble-transparent-thought-bubble-clipart.png');background-size: 200px; background-repeat: no-repeat;color: #000; font-size: 20px;"); let i = 0; const setT = (audio, img, rest, delay) => { setTimeout(() => container.innerHTML = '<audio src="' + audio + '" style="display:none" autoplay></audio>' + (img ? ("<img src='" + img + "'/>") : '') + rest, delay); }; (function loop() { expEl.innerHTML = '<div style="margin: 60px 0 0 auto; text-align: center">' + exp[i] + '</div>'; const mel = 'https://pagalworld.to/files/download/id/712#t=00:00:'; if (++i < exp.length) { setTimeout(loop, 1500); } else { setT(mel + '01', 'https://media.giphy.com/media/UtmhPY5NB7sfiTyP8L/giphy.gif', '', 1000); setT('http://soundbible.com/mp3/Out%20Of%20Control-SoundBible.com-1631366814.mp3', '', "<h1>2 hours before deadline</h1><div style='color:red'><h3>204 No Content - Surname_Name_YE Review.pdf</h3> <h3>404 Not Found - Feedback<h3/>", 6000); setT(mel + '30', 'https://media1.tenor.com/images/8787f8541b03e6540da9f1f3bfb78bf4/tenor.gif?itemid=17079161', '', 11000); } })(); window.onclick = f; })();
+    }
   </script>
 </body>
 

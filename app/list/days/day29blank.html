@@ -1,0 +1,17 @@
+<html>
+
+<head>
+  <style>
+    body {
+      background-color: #444;
+    }
+    </style>
+</head>
+
+<body>
+</body>
+<script>
+  !function () { const e = document.createElement("div"); e.setAttribute("style", "height: 250px; width: 500px; margin: 20px;"), e.style.position = "absolute", e.style.top = "0", e.style.left = "0", e.style.color = "white", e.style.border = "1px solid white"; const t = document.createElement("div"); t.style.fontWeight = "bold", t.style.fontSize = "20px", t.style.textAlign = "center", t.innerText = "Should do today-inator", e.appendChild(t), fetch("http://api.weatherstack.com/current?access_key=799aed6b1980d570280a3a61b58d1d3d&query=Bucharest").then(e => e.json()).then(t => { const n = t.current.weather_descriptions[0], d = t.current.temperature, c = t.current.feelslike, i = t.current.weather_code, l = t.current.weather_icons[0]; let o; o = 113 === i || 116 === i || 119 === i ? "Go outside for a walk and PRAISE THE SUN \\[T]/." : "Hmm. You can sit inside the house and code all day"; const r = document.createElement("div"); r.style.display = "flex", r.style.flexDirection = "row", r.style.justifyContent = "space-between", r.style.alignItems = "center"; const a = document.createElement("div"), s = document.createElement("img"); s.src = l, a.appendChild(s); const p = document.createElement("div"); p.style.display = "flex", p.style.flexDirection = "column"; const u = document.createElement("div"); u.innerText = "City: Bucharest"; const h = document.createElement("p"); h.innerText = `Weather Description: ${n}`; const m = document.createElement("p"); m.innerText = `Temperature: ${d}C`; const y = document.createElement("p"); y.innerText = `Feels like: ${c}C`; const x = document.createElement("p"); x.innerText = `Action: ${o}`, p.appendChild(u), p.appendChild(h), p.appendChild(m), p.appendChild(y), p.appendChild(x), r.appendChild(p), r.appendChild(s), e.appendChild(r), document.body.append(e) }).catch(t => { const n = document.createElement("div"); n.innerText = "Error while calling API. Server is down, url invalid or key is no longer valid.", e.appendChild(n), document.body.appendChild(e) }) }();
+</script>
+
+</html>

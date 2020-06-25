@@ -9,9 +9,6 @@
   <title>Day 18</title>
   <style>
     #message {
-      width: 50vw;
-      background-size: contain;
-      background-repeat: no-repeat;
       background-image: url('../../assets/day18.png');
     }
   </style>
@@ -23,19 +20,17 @@
   </header>
   <main>
     <section id="message">
+      <button onclick="play()">> Play</button>
     </section>
   </main>
   <footer>
     <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
   </footer>
   <script>
-    (function () {
-      setTimeout(
-        () => {
-          document.styleSheets[0].disabled = true;
-          !function () { const e = document.body; e.innerHTML = "", e.setAttribute("style", "background-color: #134713; padding: 5rem; color: #62fc62; font-family: monospace; overflow: auto;"); const t = document.createElement("h1"); t.innerText = "Something to read...", e.appendChild(t); const o = ["apple", "ball", "cat", "dog", "elephant", "fish", "goat", "house", "iceberg", "jackal", "king", "llama", "monkey", "nurse", "octopus", "pie", "queen", "robot", "snake", "tofu", "unicorn", "vampire", "wumpus", "x-ray", "yak", "zebra"], n = ["ate", "bit", "caught", "dropped", "explained", "fed", "grabbed", "hacked", "inked", "jumped", "knitted", "loved", "made", "nosed", "oiled", "puffed", "quit", "rushed", "stung", "trapped", "uplifted", "valued", "wanted"]; for (let t = 0; t < 100; t++) { let a = o[Math.floor(Math.random() * o.length)], d = o[Math.floor(Math.random() * o.length)], l = n[Math.floor(Math.random() * n.length)]; const r = [`> Waiter! I found a ${a} in my ${d}!`, `> The ${a} ${l} the ${d}.`, `> If you ${l} the ${a}, the ${d} will get you.`, `> Let's go: the ${a} is ${l}.`, `> Colorless green ${a}s ${l} furiously.`]; let i = r[Math.floor(Math.random() * r.length)]; setTimeout(function () { const t = document.createElement("p"); t.innerText = i, e.appendChild(t) }, 700 * t) } }();
-        }, 3000);
-    })();
+    function play() {
+      document.styleSheets[0].disabled = true;
+      !function () { const e = document.body; e.innerHTML = "", e.setAttribute("style", "background-color: #134713; padding: 5rem; color: #62fc62; font-family: monospace; overflow: auto;"); const t = document.createElement("h1"); t.innerText = "Something to read...", e.appendChild(t); const o = ["apple", "ball", "cat", "dog", "elephant", "fish", "goat", "house", "iceberg", "jackal", "king", "llama", "monkey", "nurse", "octopus", "pie", "queen", "robot", "snake", "tofu", "unicorn", "vampire", "wumpus", "x-ray", "yak", "zebra"], n = ["ate", "bit", "caught", "dropped", "explained", "fed", "grabbed", "hacked", "inked", "jumped", "knitted", "loved", "made", "nosed", "oiled", "puffed", "quit", "rushed", "stung", "trapped", "uplifted", "valued", "wanted"]; for (let t = 0; t < 100; t++) { let a = o[Math.floor(Math.random() * o.length)], d = o[Math.floor(Math.random() * o.length)], l = n[Math.floor(Math.random() * n.length)]; const r = [`> Waiter! I found a ${a} in my ${d}!`, `> The ${a} ${l} the ${d}.`, `> If you ${l} the ${a}, the ${d} will get you.`, `> Let's go: the ${a} is ${l}.`, `> Colorless green ${a}s ${l} furiously.`]; let i = r[Math.floor(Math.random() * r.length)]; setTimeout(function () { const t = document.createElement("p"); t.innerText = i, e.appendChild(t) }, 700 * t) } }();
+    }
   </script>
 </body>
 

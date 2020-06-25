@@ -86,3 +86,27 @@ h1.days {
   padding: 2rem;
   font-family: 'Display';
 }
+
+button {
+  padding: 0.5rem;
+  width: 600px;
+  border: 0;
+  background-color: var(--yellow);
+  color: #000;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  position: absolute;
+  top: 140px;
+}
+
+#message,
+#console {
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 2rem;
+}
+
+#console {
+  display: none;
+}

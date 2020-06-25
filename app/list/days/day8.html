@@ -9,10 +9,15 @@
   <title>Day 8</title>
   <style>
     #message {
-      background-size: contain;
-      background-repeat: no-repeat;
       background-image: url('../../assets/day8.png');
     }
+    span {
+      text-transform: lowercase;
+    }
+    button {
+      top: 120px;
+    }
+
   </style>
 </head>
 
@@ -22,18 +27,16 @@
   </header>
   <main>
     <section id="message">
+      <button onclick="play()">> Play <br /> <span>*make sure your youtube sound is on ;)</span></button>
     </section>
   </main>
   <footer>
     <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
   </footer>
   <script>
-    (function () {
-      setTimeout(
-        () => {
-          let aboutBlank = window.open('day8blank.html', '_self');
-        }, 3000);
-    })();
+    function play() {
+      window.open('day8blank.html', '_self');
+    }
   </script>
 </body>
 

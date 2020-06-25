@@ -9,8 +9,6 @@
   <title>Day 5</title>
   <style>
     #message {
-      background-size: contain;
-      background-repeat: no-repeat;
       background-image: url('../../assets/day5.png');
     }
   </style>
@@ -22,18 +20,16 @@
   </header>
   <main>
     <section id="message">
+      <button onclick="play()">> Play</button>
     </section>
   </main>
   <footer>
     <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
   </footer>
   <script>
-    (function() {
-      setTimeout(
-        () => {
-            (function SW() { document.getElementsByTagName('head')[0].innerHTML = ""; document.getElementsByTagName('body')[0].style = "background-color:lightblue"; document.getElementsByTagName('body')[0].innerHTML = '<div style="font-size:15px; padding-top: 40px; top:0; left:0; position: absolute; height:100%; width:100%; text-align:center"> <img src="https://media.giphy.com/media/5wikad3qSOqAg/giphy.gif" width="542" height="342"> <br><p>Are you a fan of Star Wars?</p> <br><input type="radio" id="yes" name="answer" value="yes">  <label for="yes">Yes</label><br> <input type="radio" id="no" name="answer" value="no">  <label for="no">No</label><br> <br> <input style="border:2px solid; font-size:15px" type="submit" id="submit" value="May the force be with you !"></div>'; document.getElementById('submit').onclick = function () { document.getElementById('yes').checked ? (document.getElementsByTagName('div')[0].innerHTML = '<img src="https://media1.tenor.com/images/fe7df4f3370b47d1ad01f4a1593c7245/tenor.gif?itemid=15916678" width="542" height="342"> <br> <p>Keep being awesome!</p> <br> <button style="border:2px solid; font-size:15px" id="back-btn">Try again</button>', document.getElementById('back-btn').onclick = function () { SW() }) : (document.getElementById('no').checked ? (document.getElementsByTagName('div')[0].innerHTML = '<img src="https://media1.tenor.com/images/48da7c41705f4b6b59a178432290ba11/tenor.gif?itemid=16540573" width="342" height="342"> <br> <p>You made Baby Yoda sad...</p> <br> <button style="border:2px solid; font-size:15px" id="back-btn">Try again please</button>', document.getElementById('back-btn').onclick = function () { SW() }) : '') } })();
-        }, 3000);
-    })();
+    function play() {
+      (function SW() { document.getElementsByTagName('head')[0].innerHTML = ""; document.getElementsByTagName('body')[0].style = "background-color:lightblue"; document.getElementsByTagName('body')[0].innerHTML = '<div style="font-size:15px; padding-top: 40px; top:0; left:0; position: absolute; height:100%; width:100%; text-align:center"> <img src="https://media.giphy.com/media/5wikad3qSOqAg/giphy.gif" width="542" height="342"> <br><p>Are you a fan of Star Wars?</p> <br><input type="radio" id="yes" name="answer" value="yes">  <label for="yes">Yes</label><br> <input type="radio" id="no" name="answer" value="no">  <label for="no">No</label><br> <br> <input style="border:2px solid; font-size:15px" type="submit" id="submit" value="May the force be with you !"></div>'; document.getElementById('submit').onclick = function () { document.getElementById('yes').checked ? (document.getElementsByTagName('div')[0].innerHTML = '<img src="https://media1.tenor.com/images/fe7df4f3370b47d1ad01f4a1593c7245/tenor.gif?itemid=15916678" width="542" height="342"> <br> <p>Keep being awesome!</p> <br> <button style="border:2px solid; font-size:15px" id="back-btn">Try again</button>', document.getElementById('back-btn').onclick = function () { SW() }) : (document.getElementById('no').checked ? (document.getElementsByTagName('div')[0].innerHTML = '<img src="https://media1.tenor.com/images/48da7c41705f4b6b59a178432290ba11/tenor.gif?itemid=16540573" width="342" height="342"> <br> <p>You made Baby Yoda sad...</p> <br> <button style="border:2px solid; font-size:15px" id="back-btn">Try again please</button>', document.getElementById('back-btn').onclick = function () { SW() }) : '') } })();
+    }
   </script>
 </body>
 

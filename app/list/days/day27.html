@@ -9,9 +9,6 @@
   <title>Day 27</title>
   <style>
     #message {
-      width: 50vw;
-      background-size: contain;
-      background-repeat: no-repeat;
       background-image: url('../../assets/day27.png');
     }
   </style>
@@ -23,18 +20,16 @@
   </header>
   <main>
     <section id="message">
+      <button onclick="play()">> Play</button>
     </section>
   </main>
   <footer>
     <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
   </footer>
   <script>
-    (function () {
-      setTimeout(
-        () => {
-          document.styleSheets[0].disabled = true;
-        }, 3000);
-    })();
+    function play() {
+      window.open('day27blank.html', '_self');
+    }
   </script>
 </body>
 

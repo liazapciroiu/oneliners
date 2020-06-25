@@ -9,9 +9,7 @@
   <title>Day 2</title>
   <style>
     #message {
-      background-size: contain;
-      background-repeat: no-repeat;
-            background-image: url('../../assets/day2.png');
+      background-image: url('../../assets/day2.png');
     }
   </style>
 </head>
@@ -22,13 +20,16 @@
   </header>
   <main>
     <section id="message">
+      <button onclick="play()">> Play</button>
     </section>
   </main>
   <footer>
     <img src="/app/assets/feFull.jpg" alt="logo fe guild" />
   </footer>
   <script>
-    (() => { let e = prompt("What is your favorite food?", "example: cake"), a = []; a.push(e); a.map(e => 0 == e.length ? alert("O_O I knew you were a vampire!") : e.includes("cake") ? alert("YEY! *\\(^o^)//*  Cake! <3") : alert("TT_TT No cake?! Cake is always the answer!")) })();
+    function play() {
+      (() => { let e = prompt("What is your favorite food?", "example: cake"), a = []; a.push(e); a.map(e => 0 == e.length ? alert("O_O I knew you were a vampire!") : e.includes("cake") ? alert("YEY! *\\(^o^)//*  Cake! <3") : alert("TT_TT No cake?! Cake is always the answer!")) })();
+    }
   </script>
 </body>
 
